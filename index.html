@@ -70,6 +70,8 @@
     .status {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
+        color: #777;
     }
 
     .result textarea {
@@ -77,6 +79,7 @@
     }
 
     textarea {
+        color: #333;
         height: 100%;
         width: 100%;
         border: none;
@@ -90,6 +93,30 @@
 
     a {
         color: steelblue;
+    }
+
+    button {
+        padding: 6px 12px;
+        margin-left: 6px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        overflow: auto;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        resize: none;
+        color: #333;
+        background: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: ghostwhite;
+    }
+
+    button:active {
+        background: gainsboro;
     }
 
     .footer {
