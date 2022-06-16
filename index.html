@@ -97,7 +97,6 @@
 
     button {
         padding: 6px 12px;
-        margin-left: 6px;
         border: 1px solid #ddd;
         border-radius: 3px;
         overflow: auto;
@@ -109,6 +108,14 @@
         color: #333;
         background: none;
         cursor: pointer;
+    }
+
+    button.right {
+        margin-left: 6px;
+    }
+
+    button.left {
+        margin-right: 6px;
     }
 
     button:hover {
@@ -144,12 +151,13 @@
         </div>
         <div class="space status">
             <div>
+                <button id="clear-button" class="left">Clear input</button>
                 <span>Replacement: </span>
                 <span id="repl-percent"></span>
             </div>
             <div class="actions">
-                <button id="refresh-button">Refresh</button>
-                <button id="copy-button">Copy result</button>
+                <button id="refresh-button" class="right">Refresh</button>
+                <button id="copy-button" class="right">Copy result</button>
             </div>
 
         </div>
@@ -170,6 +178,7 @@
         const inputText = document.querySelector('#input-text')
         const resultText = document.querySelector('#result-text')
         const replPercent = document.querySelector('#repl-percent')
+        const clearButton = document.querySelector('#clear-button')
         const refreshButton = document.querySelector('#refresh-button')
         const copyButton = document.querySelector('#copy-button')
 
@@ -185,6 +194,12 @@
             resultText.focus()
             resultText.selectionStart = 0
             resultText.selectionEnd = resultText.value.length
+        }
+
+        clearButton.onclick = () => {
+            inputText.value = ''
+            inputText.focus()
+            replace()
         }
 
         refreshButton.onclick = () => {
